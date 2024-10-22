@@ -1,0 +1,20 @@
+{
+  "params": {
+    "local_server": "TRUE",
+    "local_uri": "mysql://root:@localhost/arbitrum",
+    "pro_uri": "mysql://root:@localhost/arbitrum/production uri/withid&passowrd",
+    "facebook": "https://www.facebook.com/Arbitrum",
+    "twitter": "https://www.x.com/Arbitrum",
+    "github": "https://github.com/Arbitrum",
+    "blog_name": "Arbitrum",
+    "blog_heading": "The future of Ethereum",
+    "user": "monishsatpuri@gmail.com",
+    "password": "pegl hoat eqzu hswa",
+    "about": "Hello World, I'm Monish Satpuri & my nick name is Honey! <3",
+    "admin": "Monish Satpuri",
+    "no_of_posts": 3,
+    "admin_user": "monishsatpuri@gmail.com",
+    "admin_password": "qwertyuiop"
+  }
+
+}

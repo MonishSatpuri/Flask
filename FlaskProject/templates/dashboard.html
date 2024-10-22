@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+{% block body %}
+<html lang="en">
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('{{url_for('static', filename='assets/img/home-bg.jpg')}}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>{{params['blog_name']}}</h1>
+                            <span class="subheading">"Welcome to the Admin Panel"</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <h3 style="margin: 0 0 20 408">Basic Actions</h3>
+        <hr style="margin: 0 250 0 250">
+<!--        <a href="/logout"><button class="btn btn-primary" style="margin : 20 0 40 410">Logout</button></a>-->
+
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="margin : 20 0 40 410">
+  Logout
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Admin : {{params['admin']}}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Do yoy really want to log out?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <a href="/logout"><button type="button" class="btn btn-primary">Yes, Logout</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+        <!-- Main Content-->
+        <div class="container px-4 px-lg-5" style="margin-bottom: 31px">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+
+<!--        <a href="/edit/0"><button class="btn btn-primary" id="addPostButton" type="submit" style="margin: 0 445 15 440;">Add Post</button></a>-->
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+<!--      <th scope="col">#</th>-->
+      <th scope="col">SNo</th>
+      <th scope="col">Title</th>
+      <th scope="col">Date</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {% for post in post %}
+    <tr>
+<!--      <th scope="row">SNo</th>-->
+      <td> {{post.sno}} </td>
+      <td>{{post.title}}</td>
+      <td>{{post.date}}</td>
+      <td><a href="/edit/{{post.sno}}"><button class="btn btn-primary">Edit</button></a></td>
+      <td><a href="/delete/{{post.sno}}"><button class="btn btn-primary">Delete</button></a></td>
+    </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+
+                    </div>
+
+
+
+                    <!-- Divider-->
+<!--                    <hr class="my-4" />-->
+                    <!-- Pager-->
+<!--                    <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="/post/<string:p_slug>">Older Posts →</a></div>-->
+                </div>
+            </div>
+        </div>
+
+{% endblock %}
